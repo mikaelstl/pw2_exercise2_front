@@ -18,7 +18,7 @@ const chats: ChatInfo[] = [
 const Content = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr 200px;
+  grid-template-rows: 1fr auto;
 
   height: 100vh;
 

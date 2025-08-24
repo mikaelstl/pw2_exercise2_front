@@ -10,8 +10,13 @@ const SendButton = styled.button`
   background-color: ${Palette.action_buttons};
 
   padding: 4px;
+`;
+
+const Margin = styled.div`
+  margin: 20px 120px 50px;
 `
 
 export {
-  SendButton
+  SendButton,
+  Margin
 }
