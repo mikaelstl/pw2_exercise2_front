@@ -30,7 +30,7 @@ const Content = styled.div`
 function App() {
   return (
     <Content className="chat-application">
-      <ChatsContainer chats={[]}/>
+      <ChatsContainer chats={chats}/>
       <ChatArea/>
       <MessageField/>
     </Content>

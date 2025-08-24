@@ -8,9 +8,13 @@ const Container = styled.div`
 
   width: 100%;
 
-  padding: 8px;
+  padding: 12px;
 
-  border-bottom: 1px solid ${Palette.details};
+  border-radius: 8px;
+
+  &:hover {
+    background-color: ${Palette.chat_hover};
+  }
 `
 
 export { Container }

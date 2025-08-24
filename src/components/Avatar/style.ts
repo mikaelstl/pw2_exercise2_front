@@ -2,8 +2,8 @@ import styled from "styled-components"
 import Palette from "../../assets/palette"
 
 export const Container = styled.div`
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
 
   border-radius: 50%;
 
