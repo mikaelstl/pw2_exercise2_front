@@ -6,19 +6,18 @@ const Container = styled.div`
   max-width: 360px;
 
   height: min-content;
-  min-height: 12px;
 
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: pre-wrap;
 
-  border-radius: 50px;
+  border-radius: 25px;
 
   padding: 8px 24px;
   
   &.sended {
     background-color: ${Palette.message};
-    border-top-right-radius: 64px;
+    border-top-right-radius: 32px;
     border-bottom-right-radius: 12px;
 
     align-self: flex-end;
@@ -26,7 +25,7 @@ const Container = styled.div`
 
   &.recived {
     background-color: ${Palette.chats};
-    border-top-left-radius: 64px;
+    border-top-left-radius: 32px;
     border-bottom-left-radius: 12px;
   
     align-self: flex-start;

@@ -5,9 +5,13 @@ import { Text } from "../../base/Text";
 export function NewChatBtn() {
   return (
     <>
-      <Button>
+      <Button className="new-chat-btn"
+        onClick={
+          () => console.log("TO-DO new screen or pop-up to select new chat")
+        }
+      >
         <PlusIcon style={{ width: 24, height: 24 }}/>
-        <Text>New Chat</Text>
+        <Text className="button-label">New Chat</Text>
       </Button>
     </>
   )

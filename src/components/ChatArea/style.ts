@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   gap: 6px;
 
-  padding: 0px 24px;
+  padding: 16px 24px 0px;
+
+  overflow: scroll;
 `;
 
 export {
