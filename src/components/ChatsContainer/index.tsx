@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BorderedContainer } from "../base/BorderedContainer";
 import { ItalicTitle } from "../base/ItalicTitle";
 import { TextInput } from "../base/TextInput";
@@ -15,16 +16,27 @@ interface ChatsContainerProps {
 }
 
 export function ChatsContainer(props: ChatsContainerProps) {
+  const [searched, setSearched] = useState('');
+  
+  const chats = props.chats.filter(
+    (chat) => chat.name.includes(searched)
+  )
+  
   return (
     <Container className="chats-container">
       <NewChatBtn/>
       <BorderedContainer>
-        <TextInput type="text" placeholder="Search chats..."/>
+        <TextInput
+          type="text"
+          placeholder="Search chats..."
+          value={searched}
+          onChange={(event) => setSearched(event.target.value)}
+        />
       </BorderedContainer>
       <Chats>
         {
           props.chats.length !== 0 
-          ? props.chats.map(
+          ? chats.map(
               (chat, index)=><ChatCard key={index} name={chat.name}/>
             )
           : <Margin><ItalicTitle>No Chats</ItalicTitle></Margin>

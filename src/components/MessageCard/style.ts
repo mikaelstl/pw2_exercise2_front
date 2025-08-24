@@ -3,13 +3,19 @@ import Palette from "../../assets/palette";
 
 const Container = styled.div`
   width: fit-content;
-  max-width: 520px;
+  max-width: 360px;
+
   height: min-content;
+  min-height: 12px;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 
   border-radius: 50px;
 
   padding: 8px 24px;
-
+  
   &.sended {
     background-color: ${Palette.message};
     border-top-right-radius: 64px;

@@ -11,7 +11,7 @@ const chats: ChatInfo[] = [
     name: "user2"
   },
   {
-    name: "user2"
+    name: "user3"
   }
 ]
 

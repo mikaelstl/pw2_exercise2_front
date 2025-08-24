@@ -6,6 +6,11 @@ export function ChatArea() {
     <Container className="chat-area">
       <MessageCard className="chat-message sended"/>
       <MessageCard className="chat-message recived"/>
+      <MessageCard className="chat-message sended"/>
+      <MessageCard className="chat-message sended"/>
+      <MessageCard className="chat-message recived"/>
+      <MessageCard className="chat-message recived"/>
+      <MessageCard className="chat-message recived"/>
     </Container>
   )
 }
