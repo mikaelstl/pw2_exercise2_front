@@ -4,6 +4,7 @@ import Palette from "../../assets/palette";
 const Container = styled.div`
   display: flex;
   gap: 12px;
+  align-items: center;
 
   width: 100%;
 

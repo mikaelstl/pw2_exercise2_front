@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import { ChatsContainer, type ChatInfo } from "./components/ChatsContainer"
+import { MessageField } from "./components/MessageField"
+import { ChatArea } from "./components/ChatArea"
 
 const chats: ChatInfo[] = [
   {
@@ -15,8 +17,8 @@ const chats: ChatInfo[] = [
 
 const Content = styled.div`
   display: grid;
-  grid-template: "chats-container chat-area" 100%
-                 "chats-container chat-area" / auto 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 200px;
 
   height: 100vh;
 
@@ -28,7 +30,9 @@ const Content = styled.div`
 function App() {
   return (
     <Content className="chat-application">
-      <ChatsContainer chats={chats}/>
+      <ChatsContainer chats={[]}/>
+      <ChatArea/>
+      <MessageField/>
     </Content>
   )
 }

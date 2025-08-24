@@ -5,9 +5,17 @@
   background-color: #181818;
 }
 
-body {
+* {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
   font-family: "Poppins", sans-serif;
+}
+
+input:focus {
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
 }
