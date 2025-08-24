@@ -23,8 +23,6 @@ const Content = styled.div`
   height: 100vh;
 
   overflow: hidden;
-
-  border: 1px solid red;
 `
 
 function App() {

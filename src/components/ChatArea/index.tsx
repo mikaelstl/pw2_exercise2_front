@@ -1,5 +1,11 @@
+import { MessageCard } from "../MessageCard";
+import { Container } from "./style";
+
 export function ChatArea() {
   return (
-    <div className="chat-area" style={{backgroundColor: "blue"}}></div>
+    <Container className="chat-area">
+      <MessageCard className="my-messages"/>
+      <MessageCard className="recived-messages"/>
+    </Container>
   )
 }
