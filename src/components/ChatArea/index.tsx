@@ -4,8 +4,8 @@ import { Container } from "./style";
 export function ChatArea() {
   return (
     <Container className="chat-area">
-      <MessageCard className="my-messages"/>
-      <MessageCard className="recived-messages"/>
+      <MessageCard className="chat-message sended"/>
+      <MessageCard className="chat-message recived"/>
     </Container>
   )
 }

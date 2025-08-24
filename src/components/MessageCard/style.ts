@@ -9,6 +9,22 @@ const Container = styled.div`
   border-radius: 50px;
 
   padding: 8px 24px;
+
+  &.sended {
+    background-color: ${Palette.message};
+    border-top-right-radius: 64px;
+    border-bottom-right-radius: 12px;
+
+    align-self: flex-end;
+  }
+
+  &.recived {
+    background-color: ${Palette.chats};
+    border-top-left-radius: 64px;
+    border-bottom-left-radius: 12px;
+  
+    align-self: flex-start;
+  }
 `
 
 export {
