@@ -1,7 +1,13 @@
 import styled from "styled-components"
 import { CreateAccountForm } from "../../components/CreateAccountForm";
-import api from "../../lib/api";
-import type { User } from "../../lib/types/user";
+import { api } from "../../service/api";
+import { useNavigate } from "react-router-dom";
+
+export interface UserData {
+  name: string;
+  email: string;
+  password: string;
+}
 
 const Content = styled.div`
   display: flex;
@@ -14,15 +20,18 @@ const Content = styled.div`
 `;
 
 function CreateAccount() {
-  const onSubmit = (data: User) => {
+  const navigate = useNavigate();
+
+  const onSubmit = (data: UserData) => {
     api.post("/users", data).then(response => {
-      console.log(response);
+      alert('Conta criada')
+      navigate('/')
     })
   }
 
   return (
     <Content className="create-acount-page">
-      <CreateAccountForm onSubmit={onSubmit}/>
+      <CreateAccountForm onSubmit={onSubmit} />
     </Content>
   )
 }

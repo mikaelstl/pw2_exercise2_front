@@ -5,16 +5,13 @@ import { Title } from "../base/Title";
 import { Container, Field, Form, Submit } from "./style";
 import { Text } from "../base/Text";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import type { User } from "../../lib/types/user";
+import type { UserData } from "../../pages/CreateAccount";
 
 interface CreateAccountFormProps {
-  onSubmit?: (data: User) => Promise<void> | void;
+  onSubmit?: (data: UserData) => Promise<void> | void;
 };
 
 export function CreateAccountForm(props: CreateAccountFormProps) {
-  const navigate = useNavigate();
-
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,12 +37,11 @@ export function CreateAccountForm(props: CreateAccountFormProps) {
     if (!validate()) return;
 
     try {
-      const user = {
-        username,
+      const user: UserData = {
+        name: username,
         email,
         password
       }
-      console.log(user);
 
       props.onSubmit?.(user);
       

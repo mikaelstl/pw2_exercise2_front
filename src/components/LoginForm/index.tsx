@@ -6,12 +6,23 @@ import { Container, Field, Footer, Form, LinkButton, Submit } from "./style";
 import { Text } from "../base/Text";
 import { Divider } from "../base/Divider";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../service/api";
+import { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 
+interface Login {
+  email: string, password: string
+}
 export function LoginForm() {
   const navigate = useNavigate();
+  const [login, setLogin] = useState<Login>({} as Login);
+  const { login: onLogin } = useAuth();
 
   const handleLogin = () => {
-    navigate('/chat')
+    api.post('/login', login).then((response) => {
+      onLogin(response.data.user);
+      navigate('/chat')
+    })
   }
 
   const handleCreateAccount = () => {
@@ -27,24 +38,24 @@ export function LoginForm() {
         <Field>
           <Label htmlFor="username">Usuário</Label>
           <BorderedContainer>
-            <TextInput name="username" type="text"/>
+            <TextInput name="username" type="text" onChange={({ target }) => setLogin(prev => ({ ...prev, email: target.value }))} />
           </BorderedContainer>
         </Field>
 
         <Field>
           <Label htmlFor="password">Senha</Label>
           <BorderedContainer>
-            <TextInput name="password" type="password"/>
+            <TextInput name="password" type="password" onChange={({ target }) => setLogin(prev => ({ ...prev, password: target.value }))} />
           </BorderedContainer>
         </Field>
 
-        <Submit type="button" onClick={handleLogin}>
+        <Submit type="button" onClick={() => handleLogin()}>
           <Text>Entrar</Text>
         </Submit>
 
       </Form>
 
-      <Divider/>
+      <Divider />
 
       <Footer>
         <Text>Não tem conta?</Text>
