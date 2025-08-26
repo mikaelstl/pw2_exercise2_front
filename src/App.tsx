@@ -1,37 +1,18 @@
-import styled from "styled-components"
-import { ChatsContainer, type ChatInfo } from "./components/ChatsContainer"
-import { MessageField } from "./components/MessageField"
-import { ChatArea } from "./components/ChatArea"
-
-const chats: ChatInfo[] = [
-  {
-    name: "user1"
-  },
-  {
-    name: "user2"
-  },
-  {
-    name: "user3"
-  }
-]
-
-const Content = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr auto;
-
-  height: 100vh;
-
-  overflow: hidden;
-`
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import CreateAccount from "./pages/CreateAccount"
+import Login from "./pages/Login"
+import Chat from "./pages/Chat"
 
 function App() {
   return (
-    <Content className="chat-application">
-      <ChatsContainer chats={chats}/>
-      <ChatArea/>
-      <MessageField/>
-    </Content>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/create-account" element={<CreateAccount />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
