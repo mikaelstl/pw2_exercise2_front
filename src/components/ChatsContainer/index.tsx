@@ -28,7 +28,7 @@ export function ChatsContainer(props: ChatsContainerProps) {
       <BorderedContainer>
         <TextInput
           type="text"
-          placeholder="Search chats..."
+          placeholder="Buscar conversas..."
           value={searched}
           onChange={(event) => setSearched(event.target.value)}
         />

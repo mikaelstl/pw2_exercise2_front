@@ -2,10 +2,9 @@ import { Label } from "../base/Label";
 import { TextInput } from "../base/TextInput";
 import { BorderedContainer } from "../base/BorderedContainer";
 import { Title } from "../base/Title";
-import { Container, Field, Form, Submit } from "./style";
+import { Container, Field, Footer, Form, LinkButton, Submit } from "./style";
 import { Text } from "../base/Text";
 import { Divider } from "../base/Divider";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 export function LoginForm() {
@@ -26,14 +25,14 @@ export function LoginForm() {
       <Form action="">
 
         <Field>
-          <Label htmlFor="username">Username</Label>
+          <Label htmlFor="username">Usuário</Label>
           <BorderedContainer>
             <TextInput name="username" type="text"/>
           </BorderedContainer>
         </Field>
 
         <Field>
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">Senha</Label>
           <BorderedContainer>
             <TextInput name="password" type="password"/>
           </BorderedContainer>
@@ -56,34 +55,3 @@ export function LoginForm() {
     </Container>
   )
 }
-
-const Footer = styled.div`
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  justify-content: center;
-`;
-
-const LinkButton = styled.button`
-  background: none;
-  border: none;
-  color: #a5b4fc;
-  font-weight: 600;
-  padding: 0;
-  &:hover { text-decoration: underline; }
-`;
-
-{/* <form action="" method="get" class="form-example">
-  <div class="form-example">
-    <label for="name">Enter your name: </label>
-    <input type="text" name="name" id="name" required />
-  </div>
-  <div class="form-example">
-    <label for="email">Enter your email: </label>
-    <input type="email" name="email" id="email" required />
-  </div>
-  <div class="form-example">
-    <input type="submit" value="Subscribe!" />
-  </div>
-</form> */}
-

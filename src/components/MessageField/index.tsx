@@ -8,7 +8,7 @@ export function MessageField() {
   return (
     <Margin>
       <BorderedContainer className="message-field">
-        <TextInput placeholder="Send a message"/>
+        <TextInput placeholder="Mande uma mensagem"/>
         <SendButton><PaperAirplaneIcon fontSize={16} color={Palette.chats}/></SendButton>
       </BorderedContainer>
     </Margin>

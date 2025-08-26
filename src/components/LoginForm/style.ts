@@ -43,9 +43,27 @@ const Submit = styled.button`
   background-color: white;
 `
 
+const Footer = styled.div`
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const LinkButton = styled.button`
+  background: none;
+  border: none;
+  color: #a5b4fc;
+  font-weight: 600;
+  padding: 0;
+  &:hover { text-decoration: underline; }
+`;
+
 export {
   Container,
   Field,
   Form,
-  Submit
+  Submit,
+  Footer,
+  LinkButton
 }

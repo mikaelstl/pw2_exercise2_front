@@ -11,7 +11,7 @@ export function NewChatBtn() {
         }
       >
         <PlusIcon style={{ width: 24, height: 24 }}/>
-        <Text className="button-label">New Chat</Text>
+        <Text className="button-label">Nova conversa</Text>
       </Button>
     </>
   )
