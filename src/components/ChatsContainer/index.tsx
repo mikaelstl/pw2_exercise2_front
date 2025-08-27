@@ -5,14 +5,12 @@ import { TextInput } from "../base/TextInput";
 import { NewChatBtn } from "../buttons/NewChatBtn";
 import ChatCard from "../ChatCard";
 import { Chats, Container, Margin } from "./style";
-
-export interface ChatInfo {
-  name: string;
-  photo?: string;
-}
+import type { User } from "../../pages/Chat";
 
 interface ChatsContainerProps {
-  chats: ChatInfo[]
+  chats: User[];
+  selectChat: (id: string) => void;
+  chatId: string;
 }
 
 export function ChatsContainer(props: ChatsContainerProps) {
@@ -37,9 +35,16 @@ export function ChatsContainer(props: ChatsContainerProps) {
         {
           props.chats.length !== 0 
           ? chats.map(
-              (chat, index)=><ChatCard key={index} name={chat.name}/>
+              (chat, index)=> <ChatCard 
+                                isActive={props.chatId === chat.id} 
+                                key={index} 
+                                name={chat.name} 
+                                onClick={() => props.selectChat(chat.id)}
+                              />
             )
-          : <Margin><ItalicTitle>No Chats</ItalicTitle></Margin>
+          : <Margin>
+              <ItalicTitle>No Chats</ItalicTitle>
+            </Margin>
         }
       </Chats>
     </Container>

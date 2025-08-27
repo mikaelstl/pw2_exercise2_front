@@ -2,19 +2,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import CreateAccount from "./pages/CreateAccount"
 import Login from "./pages/Login"
 import Chat from "./pages/Chat"
-import { PrivateRoute } from "./routes/PrivateRoute"
+import { AuthProvider } from "./context/AuthContext"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        
-        <Route path="/chat" element={
-          <PrivateRoute>
-            <Chat />
-          </PrivateRoute>
-        } />
+
+        <Route
+          path="/chat"
+          element={
+            <AuthProvider>
+              <Chat />
+            </AuthProvider>
+          }
+        />
         <Route path="/create-account" element={<CreateAccount />} />
       </Routes>
     </BrowserRouter>

@@ -1,30 +1,34 @@
+import { useAuth } from "../../hooks/useAuth";
+import type { User } from "../../pages/Chat";
 import { MessageCard } from "../MessageCard";
 import { Container } from "./style";
 
-export function ChatArea() {
+export interface Message {
+  id: string;
+  content: string;
+  createdAt: string; 
+  authorId: string;
+  reciverId: string;
+  author: User;
+  reciver: User;
+}
+
+interface ChatAreaProps {
+  messages: Message[];
+}
+
+export function ChatArea({ messages }: ChatAreaProps) {
+  const { user } = useAuth();
+  
   return (
     <Container className="chat-area">
-      <MessageCard className="chat-message sended"
-        message="danlkdadawi"
-      />
-      <MessageCard className="chat-message recived"
-        message="danlkdadawipadoáwodaodadipdamdalmdnaidajáedma"
-      />
-      <MessageCard className="chat-message sended"
-        message="danlkdadawiadlamdçkadkapemlamedalmdalmd"
-      />
-      <MessageCard className="chat-message sended"
-        message="danlkdadawildanpdnandne dmv svckadoakdla' k okdpadka[edla  enaeokpdalenkadbcuab"
-      />
-      <MessageCard className="chat-message recived"
-        message="danlkdadawi kadnada  jojajdaédaeidaehdiaeojoa jnidaedja'adnadnaeiaedi n"
-      />
-      <MessageCard className="chat-message recived"
-        message="danlkdadawi aoedaheiaedbaibdae iheidhaoehfaheifufeiacnk n ieaejdoaj ajeojaódjadp "
-      />
-      <MessageCard className="chat-message recived"
-        message="danlkdadawi"
-      />
+      {messages.map((msg, index) => (
+        <MessageCard
+          key={index}
+          className={`chat-message ${msg.authorId === user?.id ? 'sended' : 'recived'}`}
+          message={msg.content}
+        />
+      ))}
     </Container>
-  )
+  );
 }
