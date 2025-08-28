@@ -36,7 +36,7 @@ export function LoginForm() {
       <Form action="">
 
         <Field>
-          <Label htmlFor="username">Usuário</Label>
+          <Label htmlFor="username">Email</Label>
           <BorderedContainer>
             <TextInput name="username" type="text" onChange={({ target }) => setLogin(prev => ({ ...prev, email: target.value }))} />
           </BorderedContainer>

@@ -43,7 +43,7 @@ export function ChatsContainer(props: ChatsContainerProps) {
                               />
             )
           : <Margin>
-              <ItalicTitle>No Chats</ItalicTitle>
+              <ItalicTitle>Sem conversas</ItalicTitle>
             </Margin>
         }
       </Chats>
